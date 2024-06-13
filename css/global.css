@@ -1,0 +1,36 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url('@/assets/Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat Extra Bold';
+    src: url('@/assets/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Extra Bold Italic';
+    src: url('@/assets/Open_Sans/static/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Medium';
+    src: url('@/assets/Open_Sans/static/OpenSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Light Italic';
+    src: url('@/assets/Open_Sans/static/OpenSans-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url('@/assets/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
+}
