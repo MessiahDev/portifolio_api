@@ -34,3 +34,13 @@
     font-family: 'Open Sans Light';
     src: url('@/assets/Open_Sans/static/OpenSans-Light.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('@/assets/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('@/assets/Roboto/Roboto-Bold.ttf') format('truetype');
+}

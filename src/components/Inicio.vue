@@ -1,12 +1,20 @@
 <template>
     <section class="section">
         <div class="apresentacao">
-            <p>Olá,</p>
-            <p>Eu sou Alex!</p>
-            <p>Atualmente Desenvolvedor FullStack</p>
+            <h2>Olá, eu sou</h2>
+            <h2><span>Alex.</span></h2>
+
         </div>
-        <div class="dois"></div>
-        <div class="tres"></div>
+        <div class="descricao">
+            <p>Um Desenvolvedor FullStack apaixonado por tecnologia. Sempre em busca de conhecimento e experiências.
+                Curioso(a)? Entre em contato!</p>
+        </div>
+        <div class="links">
+            <div>
+                <a href="#"><span>contato</span></a>
+                <a href="#"><span>Baixar CV</span></a>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -14,51 +22,103 @@
 export default {
     name: 'Inicio',
 
-    data () {
+    data() {
         return {}
-    }
+    },
 }
 </script>
 
 <style>
 .apresentacao {
     grid-area: 'apresentacao';
-    border: 1px solid #f0f0f0;
-    grid-column: 1;
-    grid-row: 1 / 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    padding-top: 10%;
     color: #f0f0f0;
-    padding: 0em 2em;
-    font-family: 'Montserrat Extra Bold', sans-serif;
+    font-family: 'Montserrat Medium', sans-serif;
 }
 
-.apresentacao p:nth-child(1), p:nth-child(2) {
-    font-size: 6rem;
+.apresentacao h2 {
+    font-size: 7rem;
     letter-spacing: 5px;
 }
 
-.dois {
-    grid-area: 'dois';
-    border: 1px solid #f0f0f0;
+.apresentacao h2 span {
+    background: linear-gradient(45deg, orange, red, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding-left: 1rem;
 }
 
-.tres {
-    grid-area: 'tres';
-    border: 1px solid #f0f0f0;
+.apresentacao div {
+    display: flex;
+    margin: auto 0px;
+}
+
+.descricao {
+    grid-area: 'descricao';
+    font-family: 'Montserrat Medium', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30%;
+    letter-spacing: 2px;
+    line-height: 2;
+    font-size: 1em;
+    color: #f0f0f0;
+}
+
+.links {
+    grid-area: 'links';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.links div a {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: 'Open Sans Light', sans-serif;
+    transition: 0.5s ease-in-out;
+    color: #f0f0f0;
+    letter-spacing: 1px;
+    margin: 0em 2em;
+}
+
+.links div a span::after {
+    content: '';
+    position: absolute;
+    bottom: -0.4rem;
+    width: 0%;
+    left: 50%;
+    height: 0.1rem;
+    background: linear-gradient(50deg, orange, red);
+    transition: all 300ms ease-in-out;
+}
+
+.links div a span:hover:after {
+    width: 95%;
+    left: 3%;
 }
 
 .section {
+    z-index: 99;
     display: grid;
-    grid-template-columns: 35em 1fr;
-    grid-template-rows: 30em 1fr;
-    width: 70rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr;
+    width: 75rem;
     height: 100vh;
     grid-template-areas:
-            'apresentacao' 'dois'
-            'apresentacao' 'tres';
+        'apresentacao'
+        'descricao'
+        'tres';
 }
-
 </style>

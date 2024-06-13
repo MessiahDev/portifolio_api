@@ -1,7 +1,9 @@
 <template>
   <Navbar />
-  <div class="container">
-    <Inicio />
+  <div class="fundo">
+    <div class="container">
+      <Inicio />
+    </div>
   </div>
 </template>
 
@@ -34,4 +36,19 @@ body {
   padding: 100px;
 }
 
+.fundo {
+  background: url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif') no-repeat center center / cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.fundo::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 15, 15, 0.9);
+}
 </style>

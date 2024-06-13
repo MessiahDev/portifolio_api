@@ -1,8 +1,8 @@
 <template>
   <nav>
     <div class="logo">
-      <div>Portifólio</div>
-      <div>by Alex Alle</div>
+      <h1>Portifólio</h1>
+      <p>by Alex Alle</p>
     </div>
     <div class="div-select-lang">
       <select class="select-lang">
@@ -38,6 +38,7 @@ nav {
   position: fixed;
   letter-spacing: 2px;
   width: 100%;
+  z-index: 100;
   background: linear-gradient(35deg, orange, red, blue);
 }
 
@@ -87,14 +88,16 @@ nav ul li a {
   font-family: 'Open Sans Medium', sans-serif;
   color: #f0f0f0;
   width: 20rem;
-  margin: 3px 0px 2px 200px;
+  margin: 2px 0px 2px 3px;
   padding: 5px 5px 5px 0px;
   text-align: end;
+  cursor: pointer;
 }
 
-.logo div:nth-child(2) {
+.logo p:nth-child(2) {
   font-family: 'Open Sans Light', sans-serif;
   font-size: 0.7rem;
+  letter-spacing: 2px;
 }
 
 .div-select-lang {
@@ -102,7 +105,7 @@ nav ul li a {
   justify-content: center;
   align-items: center;
   border-left: 1px solid #f0f0f0;
-  margin: 10px 0px 10px 5px;
+  margin: 5px 0px 5px 5px;
   padding: 10px 0px 10px 5px;
 }
 
