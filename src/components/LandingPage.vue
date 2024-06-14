@@ -24,7 +24,7 @@ export default {
 html,
 body {
   background-color: #0f0f0f;
-  width: 1200px;
+  width: 100vw;
 }
 
 .container {
@@ -47,8 +47,8 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(15, 15, 15, 0.9);
 }
 </style>

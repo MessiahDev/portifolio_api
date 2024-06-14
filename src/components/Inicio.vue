@@ -2,8 +2,7 @@
     <section class="section">
         <div class="apresentacao">
             <h2>Olá, eu sou</h2>
-            <h2><span>Alex.</span></h2>
-
+            <h2>Alex.</h2>
         </div>
         <div class="descricao">
             <p>Um Desenvolvedor FullStack apaixonado por tecnologia. Sempre em busca de conhecimento e experiências.
@@ -29,16 +28,22 @@ export default {
 </script>
 
 <style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Medium', sans-serif;
+}
+
 .apresentacao {
-    grid-area: 'apresentacao';
+    grid-area: apresentacao;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
     color: #f0f0f0;
-    font-family: 'Montserrat Medium', sans-serif;
 }
 
 .apresentacao h2 {
@@ -46,26 +51,14 @@ export default {
     letter-spacing: 5px;
 }
 
-.apresentacao h2 span {
-    background: linear-gradient(45deg, orange, red, blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    padding-left: 1rem;
-}
-
-.apresentacao div {
-    display: flex;
-    margin: auto 0px;
-}
-
 .descricao {
-    grid-area: 'descricao';
-    font-family: 'Montserrat Medium', sans-serif;
+    grid-area: descricao;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 30%;
+    text-align: center;
+    padding: 0 35%;
+    padding-top: 5em;
     letter-spacing: 2px;
     line-height: 2;
     font-size: 1em;
@@ -73,19 +66,16 @@ export default {
 }
 
 .links {
-    grid-area: 'links';
+    grid-area: links;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .links div a {
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     font-family: 'Open Sans Light', sans-serif;
     transition: 0.5s ease-in-out;
     color: #f0f0f0;
@@ -112,13 +102,59 @@ export default {
 .section {
     z-index: 99;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 3fr 1fr 1fr;
-    width: 75rem;
-    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 3fr 1fr;
+    width: 100vw;
+    height: 100%;
     grid-template-areas:
         'apresentacao'
         'descricao'
-        'tres';
+        'links';
+}
+
+@media (max-width: 1200px) {
+    .apresentacao h2 {
+        font-size: 5rem;
+    }
+    .descricao {
+        padding: 0 15%;
+    }
+}
+
+@media (max-width: 992px) {
+    .apresentacao h2 {
+        font-size: 4rem;
+    }
+    .descricao {
+        padding: 0 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .apresentacao h2 {
+        font-size: 3rem;
+    }
+    .descricao {
+        padding: 0 5%;
+    }
+    .links div a {
+        margin: 0em 1em;
+    }
+}
+
+@media (max-width: 576px) {
+    .apresentacao h2 {
+        font-size: 2.5rem;
+    }
+    .descricao {
+        padding: 0 2%;
+    }
+    .links div {
+        flex-direction: column;
+    }
+    .links div a {
+        display: block;
+        padding-top: 1em;
+    }
 }
 </style>
