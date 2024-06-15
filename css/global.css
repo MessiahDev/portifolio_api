@@ -11,6 +11,16 @@
 }
 
 @font-face {
+    font-family: 'Montserrat Light';
+    src: url('@/assets/Montserrat/static/Montserrat-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat Extra Light';
+    src: url('@/assets/Montserrat/static/Montserrat-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Montserrat Extra Bold';
     src: url('@/assets/Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
 }
@@ -43,4 +53,44 @@
 @font-face {
     font-family: 'Roboto Bold';
     src: url('@/assets/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather Regular';
+    src: url('@/assets/Merriweather/Merriweather-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather Light';
+    src: url('@/assets/Merriweather/Merriweather-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Merriweather Light Italic';
+    src: url('@/assets/Merriweather/Merriweather-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lilita One';
+    src: url('@/assets/Lilita_One/LilitaOne-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Cat Comic';
+    src: url('@/assets/cat_comic/Cat_Comic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Simple Daily';
+    src: url('@/assets/simple_daily/Simple Daily.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mosk Ultra Bold';
+    src: url('@/assets/mosk/Mosk Ultra-Bold 900.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Hello Valentica';
+    src: url('@/assets/hello_valentica/Hello Valentina.ttf') format('truetype');
 }

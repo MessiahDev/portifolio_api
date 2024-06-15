@@ -1,14 +1,16 @@
 <template>
-  <nav>
-    <div class="logo">
-      <h1>Portifólio</h1>
-      <p>by Alex Alle</p>
-    </div>
-    <div class="div-select-lang">
-      <select class="select-lang">
-        <option selected value="br">BR</option>
-        <option value="us">US</option>
-      </select>
+  <nav class="navbar">
+    <div class="logoContainer">
+      <div class="logo">
+        <h1>Portifólio</h1>
+        <p>by Alex Alle</p>
+      </div>
+      <div class="div-select-lang">
+        <select class="select-lang">
+          <option selected value="br">BR</option>
+          <option value="us">US</option>
+        </select>
+      </div>
     </div>
     <ul>
       <li v-for="(item, index) in menuItems" :key="index">
@@ -33,16 +35,17 @@ export default {
 }
 </script>
 <style>
-nav {
+.navbar {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: fixed;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   width: 100%;
   z-index: 100;
-  background: linear-gradient(35deg, orange, red, blue);
 }
 
-nav ul {
+.navbar ul {
   display: flex;
   list-style: none;
   width: 40rem;
@@ -50,7 +53,7 @@ nav ul {
   margin: 0px 50px;
 }
 
-nav ul li {
+.navbar ul li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,34 +63,36 @@ nav ul li {
   cursor: pointer;
 }
 
-nav ul li:hover {
-  background-color: #f0f0f0;
+.navbar ul li:hover {
   flex-grow: 2;
 }
 
-nav ul li:not(:hover) {
+.navbar ul li:not(:hover) {
   flex-grow: 0.5;
 }
 
-nav ul li:hover > a {
-  color: #0f0f0f;
-  font-family: 'Open Sans Medium', sans-serif;
+.navbar ul li:hover > a {
+  color: #fafafa;
+  font-family: 'Mosk Ultra Bold', sans-serif;
 }
 
-nav ul li::selection {
+.navbar ul li::selection {
   flex-grow: 2;
 }
 
-nav ul li a {
-  font-family: 'Open Sans Light', sans-serif;
+.navbar ul li a {
+  font-family: 'Mosk Ultra Bold', sans-serif;
   text-decoration: none;
-  color: #f0f0f0;
+  color: #fafafa;
+}
+
+.logoContainer {
+  display: flex;
 }
 
 .logo {
-  font-family: 'Open Sans Medium', sans-serif;
-  color: #f0f0f0;
-  width: 20rem;
+  font-family: 'Mosk Ultra Bold', sans-serif;
+  color: #fafafa;
   margin: 2px 0px 2px 3px;
   padding: 5px 5px 5px 0px;
   text-align: end;
@@ -95,7 +100,7 @@ nav ul li a {
 }
 
 .logo p:nth-child(2) {
-  font-family: 'Open Sans Light', sans-serif;
+  font-family: 'Mosk Ultra Bold', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 2px;
 }
@@ -104,22 +109,22 @@ nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid #f0f0f0;
+  border-left: 1px solid #fafafa;
   margin: 5px 0px 5px 5px;
   padding: 10px 0px 10px 5px;
 }
 
 .select-lang {
-  font-family: 'Open Sans Light', sans-serif;
+  font-family: 'Mosk Ultra Bold', sans-serif;
   background-color: transparent;
-  color: #f0f0f0;
+  color: #fafafa;
   border: 0;
   cursor: pointer;
 }
 
 .select-lang option {
-  background-color: #0f0f0f;
-  color: #f0f0f0;
+  background: #29272a;
+  color: #fafafa;
 }
 
 .select-lang:focus {

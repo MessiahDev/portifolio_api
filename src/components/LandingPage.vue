@@ -1,21 +1,24 @@
 <template>
   <Navbar />
-  <div class="fundo">
-    <div class="container">
-      <Inicio />
-    </div>
-  </div>
+  <Inicio />
+  <Projetos />
+  <Trabalhos />
+
 </template>
 
 <script>
 import Navbar from './Navbar.vue'
 import Inicio from './Inicio.vue'
+import Projetos from './Projetos.vue'
+import Trabalhos from './Trabalhos.vue'
 
 export default {
   name: 'LandingPage',
   components: {
     Navbar,
     Inicio,
+    Projetos,
+    Trabalhos,
   },
 }
 </script>
@@ -23,8 +26,8 @@ export default {
 <style>
 html,
 body {
-  background-color: #0f0f0f;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 .container {
@@ -33,22 +36,15 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  padding: 100px;
 }
 
-.fundo {
-  background: url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif') no-repeat center center / cover;
-  width: 100vw;
-  height: 100vh;
-}
-
-.fundo::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(15, 15, 15, 0.9);
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0d1b2a;
+    background-attachment: fixed;
+    height: 100vh;
 }
 </style>
