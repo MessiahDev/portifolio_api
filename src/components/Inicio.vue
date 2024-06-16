@@ -5,7 +5,7 @@
         </div>
         <div class="textRightContainer">
             <div class="descricao">
-                <p>👋 Olá, sou Alex</p>
+                <p class="title"><span class="hand">👋</span> Olá, sou Alex</p>
                 <h1>Sou desenvolvedor <span class="bordered-text">fullstack</span> e crio aplicações web, também sou viciado em <span class="bordered-text">café</span>.</h1>
             </div>
         </div>
@@ -19,6 +19,29 @@ export default {
     data() {
         return {}
     },
+
+    mounted() {
+        this.observeEvents();
+    },
+
+    methods: {
+        observeEvents() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            });
+
+            const elements = document.querySelectorAll('.hand');
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        },
+    }
 }
 </script>
 
@@ -83,11 +106,31 @@ body {
     transform: scaleY(1.1);
 }
 
-.descricao p {
+.title {
     font-size: 1.8rem;
     font-family: 'Hello Valentica', sans-serif;
-    transform: rotate(354deg);
     margin-left: -4px;
+    transform: rotate(354deg);
+    transition: all 0.6s ease-in-out;
+}
+
+@keyframes wave {
+    0% { transform: rotate(30deg); }
+    20% { transform: rotate(0deg); }
+    40% { transform: rotate(30deg); }
+    60% { transform: rotate(0deg); }
+    80% { transform: rotate(30deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hand {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    transition: all 1s ease-in-out;
+}
+
+.hand.show {
+    animation: wave 2s ease-in-out 1;
 }
 
 .bordered-text {

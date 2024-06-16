@@ -68,6 +68,34 @@
 export default {
     name: 'Projetos',
 
+    data() {
+        return {
+
+        };
+    },
+
+    mounted() {
+        this.observeCards();
+    },
+
+    methods: {
+        observeCards() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    } else {
+                        entry.target.classList.remove('show');
+                    }
+                });
+            });
+
+            const cards = document.querySelectorAll('.coding, .gitHubBtn');
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+    }
 }
 </script>
 
@@ -91,22 +119,21 @@ export default {
     width: 70em;
     height: 100vh;
     grid-template-areas:
-        'container1' 'container2'
-        'container1' 'container3';
+        'container1 container2'
+        'container1 container3';
 }
 
 .container1 {
-    grid-area: 'container1';
-    grid-row: 1;
+    grid-area: container1;
     grid-row: 1 / 3;
 }
 
 .container2 {
-    grid-area: 'container2';
+    grid-area: container2;
 }
 
 .container3 {
-    grid-area: 'container3';
+    grid-area: container3;
 }
 
 .dots {
@@ -138,6 +165,12 @@ export default {
     margin-top: 120px;
     font-family: 'Mosk Ultra Bold', sans-serif;
     font-size: 2rem;
+    transform: translateX(-100%);
+    transition: all 0.6s ease-in-out;
+}
+
+.coding.show {
+    transform: translateX(0);
 }
 
 .cardContainer1 {
@@ -168,21 +201,7 @@ export default {
     border-bottom: 2px solid #fafafa;
 }
 
-.card1 {
-    border: 2px solid #fafafa;
-    width: 30em;
-    height: 20em;
-    border-radius: 20px;
-}
-
-.card2 {
-    border: 2px solid #fafafa;
-    width: 30em;
-    height: 20em;
-    border-radius: 20px;
-}
-
-.card3 {
+.card1, .card2, .card3 {
     border: 2px solid #fafafa;
     width: 30em;
     height: 20em;
@@ -194,6 +213,12 @@ export default {
     height: 25%;
     justify-content: center;
     align-items: center;
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+}
+
+.gitHubBtn.show {
+    transform: translateX(0);
 }
 
 .gitHubBtn button {
