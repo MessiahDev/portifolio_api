@@ -2,8 +2,7 @@
   <nav class="navbar">
     <div class="logoContainer">
       <div class="logo">
-        <h1>Portifólio</h1>
-        <p>by Alex Alle</p>
+        <h1>Alex</h1>
       </div>
       <div class="div-select-lang">
         <select class="select-lang">
@@ -12,11 +11,13 @@
         </select>
       </div>
     </div>
-    <ul>
-      <li v-for="(item, index) in menuItems" :key="index">
-        <a href="#">{{ item }}</a>
-      </li>
-    </ul>
+    <div class="menuList">
+      <ul class="list" v-for="(item, index) in menuItems" :key="index">
+        <li class="listItem">
+          <a class="links" href="#">{{ item }}</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -26,11 +27,31 @@ export default {
 
     data() {
     return {
-      menuItems: ['Início', 'Projetos', 'Trabalhos', 'Skills', 'Sobre']
+      menuItems: ['Início', 'Writing', 'Trabalhos', 'Skills', 'Sobre']
     };
   },
 
+  mounted() {
+    this.observeLogo();
+  },
+
   methods: {
+    observeLogo() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        });
+
+        const cards = document.querySelectorAll('.logo');
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    },
   }
 }
 </script>
@@ -39,49 +60,56 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
+  position: absolute;
   letter-spacing: 1px;
   width: 100%;
   z-index: 100;
+  height: 120px;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
-  width: 40rem;
-  align-items: center;
-  margin: 0px 50px;
+.list {
+  width: 7em;
+  height: 100%;
 }
 
-.navbar ul li {
+.listItem {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
-  flex-grow: 1;
   transition: background-color 0.5s ease-in-out, flex-grow 0.5s ease-in-out;
   cursor: pointer;
 }
 
-.navbar ul li:hover {
-  flex-grow: 2;
+.menuList {
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 
-.navbar ul li:not(:hover) {
-  flex-grow: 0.5;
+.links {
+  display: flex;
+  position: relative;
 }
 
-.navbar ul li:hover > a {
-  color: #fafafa;
-  font-family: 'Mosk Ultra Bold', sans-serif;
+.links:hover::after {
+  width: 100%;
+  left: 0%;
 }
 
-.navbar ul li::selection {
-  flex-grow: 2;
+.links::after {
+  content: '';
+  position: absolute;
+  bottom: -0.4rem;
+  width: 0%;
+  left: 50%;
+  height: 0.2rem;
+  background: #fafafa;
+  transition: all 300ms ease-in-out;
 }
 
-.navbar ul li a {
-  font-family: 'Mosk Ultra Bold', sans-serif;
+.links {
+  font-family: 'Open Sans Medium', sans-serif;
   text-decoration: none;
   color: #fafafa;
 }
@@ -91,18 +119,23 @@ export default {
 }
 
 .logo {
-  font-family: 'Mosk Ultra Bold', sans-serif;
-  color: #fafafa;
-  margin: 2px 0px 2px 3px;
-  padding: 5px 5px 5px 0px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-family: 'Hello Valentica', sans-serif;
+  color: hsl(240, 33%, 77%);
+  margin: 0px 0px 5px 0px;
+  padding: 0px 7px 0px 0px;
+  font-size: 35px;
   text-align: end;
   cursor: pointer;
+  transform: translateY(-100%);
+  transition: all 1s ease-in-out;
 }
 
-.logo p:nth-child(2) {
-  font-family: 'Mosk Ultra Bold', sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
+.logo.show {
+  transform: translateY(0);
+  transition: all 1s ease-in-out;
 }
 
 .div-select-lang {
@@ -110,8 +143,8 @@ export default {
   justify-content: center;
   align-items: center;
   border-left: 1px solid #fafafa;
-  margin: 5px 0px 5px 5px;
-  padding: 10px 0px 10px 5px;
+  margin: 20px 0px 25px 5px;
+  padding: 10px 0px 10px 7px;
 }
 
 .select-lang {

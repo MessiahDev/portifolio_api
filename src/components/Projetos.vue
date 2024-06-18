@@ -1,10 +1,9 @@
 <template>
     <section class="backgroundProjects">
         <div class="cardsColums">
-
             <div class="container1">
                 <div class="coding">
-                    <h2>Desenvolvendo.</h2>
+                    <h2>Writing.</h2>
                 </div>
                 <div class="cardContainer1">
                     <div class="card1">
@@ -94,7 +93,7 @@ export default {
             cards.forEach(card => {
                 observer.observe(card);
             });
-        }
+        },
     }
 }
 </script>
@@ -124,16 +123,16 @@ export default {
 }
 
 .container1 {
-    grid-area: container1;
+    grid-area: 'container1';
     grid-row: 1 / 3;
 }
 
 .container2 {
-    grid-area: container2;
+    grid-area: 'container2';
 }
 
 .container3 {
-    grid-area: container3;
+    grid-area: 'container3';
 }
 
 .dots {
@@ -164,13 +163,15 @@ export default {
     height: 13%;
     margin-top: 120px;
     font-family: 'Mosk Ultra Bold', sans-serif;
-    font-size: 2rem;
+    font-size: 50px;
+    filter: blur(3px);
     transform: translateX(-100%);
     transition: all 0.6s ease-in-out;
 }
 
 .coding.show {
     transform: translateX(0);
+    filter: blur(0);
 }
 
 .cardContainer1 {
@@ -213,12 +214,14 @@ export default {
     height: 25%;
     justify-content: center;
     align-items: center;
+    filter: blur(3px);
     transform: translateX(-100%);
-    transition: all 1s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 
 .gitHubBtn.show {
     transform: translateX(0);
+    filter: blur(0);
 }
 
 .gitHubBtn button {

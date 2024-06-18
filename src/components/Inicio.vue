@@ -6,7 +6,7 @@
         <div class="textRightContainer">
             <div class="descricao">
                 <p class="title"><span class="hand">👋</span> Olá, sou Alex</p>
-                <h1>Sou desenvolvedor <span class="bordered-text">fullstack</span> e crio aplicações web, também sou viciado em <span class="bordered-text">café</span>.</h1>
+                <h1>Sou desenvolvedor <span class="bordered-text">fullstack</span> e amo o que faço, também sou viciado em <span class="bordered-text">café</span>.</h1>
             </div>
         </div>
     </section>
@@ -36,7 +36,7 @@ export default {
                 });
             });
 
-            const elements = document.querySelectorAll('.hand');
+            const elements = document.querySelectorAll('.hand, .logoInicio img');
             elements.forEach(element => {
                 observer.observe(element);
             });
@@ -77,12 +77,14 @@ body {
 }
 
 .logoInicio img {
+    box-sizing: content-box;
+    display: inline-block;
     width: 300px;
     height: 300px;
     align-self: center;
     justify-self: center;
-    box-shadow: 15px 15px 0px 0px #fafafa;
-    border: 10px solid #fafafa;
+    border-radius: 200px;
+    border: 15px solid #fafafa;
 }
 
 .textRightContainer {
@@ -114,17 +116,9 @@ body {
     transition: all 0.6s ease-in-out;
 }
 
-@keyframes wave {
-    0% { transform: rotate(30deg); }
-    20% { transform: rotate(0deg); }
-    40% { transform: rotate(30deg); }
-    60% { transform: rotate(0deg); }
-    80% { transform: rotate(30deg); }
-    100% { transform: rotate(0deg); }
-}
-
 .hand {
     display: inline-block;
+    margin-right: 3px;
     transform-origin: 70% 70%;
     transition: all 1s ease-in-out;
 }
@@ -147,146 +141,17 @@ body {
     margin: 25px 0;
 }
 
-.links {
-    display: flex;
-    align-items: end;
+@keyframes spin {
+    0% { transform: rotateX(0deg); }
+    100% { transform: rotateX(360deg); }
 }
 
-.links div a {
-    position: relative;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Open Sans Light', sans-serif;
-    transition: 0.5s ease-in-out;
-    color: #fafafa;
-    letter-spacing: 1px;
-    margin: 0em 2em;
-}
-
-.links div a span::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    width: 0%;
-    left: 50%;
-    height: 0.1rem;
-    background: #fafafa;
-    transition: all 300ms ease-in-out;
-}
-
-.links div a span:hover:after {
-    width: 95%;
-    left: 3%;
-}
-
-@media (max-width: 1200px) {
-    .apresentacao h2 {
-        font-size: 5rem;
-    }
-
-    .descricao {
-        padding: 0 15%;
-    }
-}
-
-@media (max-width: 992px) {
-    .apresentacao h2 {
-        font-size: 4rem;
-    }
-
-    .descricao {
-        padding: 0 10%;
-    }
-}
-
-@media (max-width: 768px) {
-    .apresentacao h2 {
-        font-size: 3rem;
-    }
-
-    .descricao {
-        padding: 0 5%;
-    }
-
-    .links div a {
-        margin: 0em 1em;
-    }
-}
-
-@media (max-width: 576px) {
-    .apresentacao {
-        padding-top: 5em;
-    }
-
-    .apresentacao h2 {
-        font-size: 2.5rem;
-    }
-
-    .descricao {
-        padding-bottom: 3em;
-    }
-
-    .links div {
-        flex-direction: column;
-        padding-bottom: 2em;
-    }
-
-    .links div a {
-        display: block;
-        padding-top: 1em;
-    }
-
-    .section {
-        z-index: 99;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 40% 3fr 1fr;
-        width: 100vw;
-        height: 100vh;
-        padding: 30px;
-        grid-template-areas:
-            'apresentacao'
-            'descricao'
-            'links';
-    }
-}
-
-@media (max-width: 320px) {
-    .apresentacao {
-        padding-top: 1.5rem;
-    }
-
-    .apresentacao h2 {
-        font-size: 2rem;
-    }
-
-    .descricao {
-        padding-bottom: 3em;
-        font-size: 0.8rem;
-    }
-
-    .links div {
-        flex-direction: column;
-        font-size: 0.9rem;
-    }
-
-    .links div a {
-        display: block;
-        padding-top: 0.3em;
-    }
-
-    .section {
-        z-index: 99;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 40% 3fr 1fr;
-        width: 100vw;
-        height: 100vh;
-        padding: 30px;
-        grid-template-areas:
-            'apresentacao'
-            'descricao'
-            'links';
-    }
+@keyframes wave {
+    0% { transform: rotate(30deg); }
+    20% { transform: rotate(0deg); }
+    40% { transform: rotate(30deg); }
+    60% { transform: rotate(0deg); }
+    80% { transform: rotate(30deg); }
+    100% { transform: rotate(0deg); }
 }
 </style>

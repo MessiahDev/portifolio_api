@@ -30,14 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-}
-
 .parallax {
     background-attachment: fixed;
     background-position: center;
