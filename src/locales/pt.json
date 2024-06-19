@@ -1,9 +1,9 @@
 {
     "navbar": {
-        "home": "Início",
-        "writing": "Escrevendo",
-        "about": "Sobre",
-        "contact": "Contato"
+        "home": "início",
+        "writing": "escrevendo",
+        "about": "sobre",
+        "contact": "contato"
     },
     "home": {
         "greeting": "Olá, sou Alex",

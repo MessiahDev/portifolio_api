@@ -1,9 +1,9 @@
 {
     "navbar": {
-        "home": "Inicio",
-        "writing": "Escribiendo",
-        "about": "Acerca de",
-        "contact": "Contacto"
+        "home": "inicio",
+        "writing": "escribiendo",
+        "about": "acerca de",
+        "contact": "contacto"
     },
     "home": {
         "greeting": "Hola, soy Alex",
@@ -13,7 +13,7 @@
         "coffee": "café."
     },
     "writing": {
-        "title": "Escritura",
+        "title": "Escribiendo.",
         "btnGit": "visita mi git..."
     },
     "about": {

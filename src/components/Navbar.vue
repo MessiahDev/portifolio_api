@@ -20,6 +20,13 @@
           <a class="links" href="#">{{ $t(item) }}</a>
         </li>
       </ul>
+      <div class="btnSwitch">
+        <label class="switch">
+          <input checked="" @click="toggleTheme()" type="checkbox" class="toggle">
+          <span class="slider"></span>
+          <span class="card-side"></span>
+        </label>
+      </div>
     </div>
   </nav>
 </template>
@@ -72,11 +79,19 @@ export default {
     });
 
     return {
+      isDarkTheme: false,
       currentLocale,
       supportLocales,
       changeLanguage,
       menuItems: ref(['navbar.home', 'navbar.writing', 'navbar.about', 'navbar.contact'])
     };
+  },
+
+  methods: {
+    toggleTheme() {
+      this.isDarkTheme = !this.isDarkTheme;
+      document.documentElement.classList.toggle('dark-theme', this.isDarkTheme);
+    }
   }
 };
 </script>
@@ -102,14 +117,15 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
-  transition: background-color 0.5s ease-in-out, flex-grow 0.5s ease-in-out;
   cursor: pointer;
 }
 
 .menuList {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100%;
+  width: 25%;
 }
 
 .links {
@@ -129,14 +145,14 @@ export default {
   width: 0%;
   left: 50%;
   height: 0.2rem;
-  background: #fafafa;
+  background: var(--text-primary-color);
   transition: all 300ms ease-in-out;
 }
 
 .links {
-  font-family: 'Open Sans Medium', sans-serif;
+  font-family: 'Mosk Bold';
   text-decoration: none;
-  color: #fafafa;
+  color: var(--text-primary-color);
 }
 
 .logoContainer {
@@ -148,14 +164,14 @@ export default {
   justify-content: end;
   align-items: center;
   font-family: 'Hello Valentica', sans-serif;
-  color: hsl(240, 33%, 77%);
+  color: var(--color-logo);
   margin: 0px 0px 5px 0px;
   padding: 0px 7px 0px 0px;
   font-size: 35px;
   text-align: end;
   cursor: pointer;
   transform: translateY(-100%);
-  transition: all 800ms ease-in-out;
+  transition: transform 800ms ease-in-out;
 }
 
 .logo.show {
@@ -166,7 +182,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-left: 1px solid #fafafa;
+  border-left: 1px solid var(--text-primary-color);
   margin: 20px 0px 25px 5px;
   padding: 10px 0px 10px 7px;
 }
@@ -174,7 +190,7 @@ export default {
 .select-lang {
   font-family: 'Ooen Sans Light', sans-serif;
   background-color: transparent;
-  color: #fafafa;
+  color: var(--text-primary-color);
   border: 0;
   cursor: pointer;
 }
@@ -186,5 +202,75 @@ export default {
 
 .select-lang:focus {
   outline: none;
+}
+
+.btnSwitch {
+  width: 30%;
+  margin: 0px 10px;
+}
+
+.switch {
+  --input-focus: hsl(164, 61%, 65%);
+  --bg-color: #fff;
+  --bg-color-alt: #666;
+  --main-color: #323232;
+  --input-out-of-focus: #774069;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 70px;
+  height: 36px;
+  transform: translateX(calc(50% - 10px));
+}
+
+.toggle {
+  opacity: 0;
+}
+
+.slider {
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--input-out-of-focus);
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "off";
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 2px;
+  bottom: 1px;
+  border: 2px solid var(--main-color);
+  border-radius: 100px;
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 25px;
+  transition: 0.3s;
+}
+
+.toggle:checked + .slider {
+  background-color: var(--input-focus);
+  transform: translateX(-32px);
+}
+
+.toggle:checked + .slider:before {
+  content: "on";
+  transform: translateX(32px);
 }
 </style>

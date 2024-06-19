@@ -64,7 +64,7 @@ body {
     height: 100vh;
     padding: 0 15em;
     background: #669bbc;
-    background: linear-gradient(to left, #774069 70%, #29272a 30%);
+    background: linear-gradient(to left, var(--background-color-primary) 70%, var(--background-color-auxiliary) 30%);
     grid-template-areas:
         'logoInicio' 'textRightContainer';
     justify-content: center;
@@ -89,7 +89,7 @@ body {
     align-self: center;
     justify-self: center;
     border-radius: 200px;
-    border: 15px solid #fafafa;
+    border: 15px solid var(--text-primary-color);
 }
 
 .textRightContainer {
@@ -109,7 +109,7 @@ body {
     line-height: 80px;
     font-size: 40px;
     letter-spacing: 1px;
-    color: #fafafa;
+    color: var(--text-primary-color);
     z-index: 1;
     transform: scaleY(1.1);
 }
@@ -134,11 +134,11 @@ body {
 
 .bordered-text {
     color: transparent;
-    -webkit-text-stroke: 2px #fafafa;
+    -webkit-text-stroke: 2px var(--text-primary-color);
 }
 
 .bordered-text:hover {
-    color: #fafafa;
+    color: var(--text-primary-color);
     -webkit-text-stroke: 0px;
 }
 

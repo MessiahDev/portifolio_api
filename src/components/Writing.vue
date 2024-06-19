@@ -1,5 +1,5 @@
 <template>
-    <section class="backgroundProjects">
+    <section class="backgroundWriting">
         <div class="cardsColums">
             <div class="container1">
                 <div class="coding">
@@ -99,14 +99,14 @@ export default {
 </script>
 
 <style>
-.backgroundProjects {
+.backgroundWriting {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4c3a69;
+    background: var(--background-color-secondary);
     width: 100vw;
     height: 100vh;
-    color: #fafafa;
+    color: var(--text-primary-color);
 }
 
 .cardsColums {
@@ -144,7 +144,7 @@ export default {
 
 .dot {
     content: '';
-    background: #fafafa;
+    background: var(--text-primary-color);
     width: 15px;
     height: 15px;
     border-radius: 50px;
@@ -154,7 +154,7 @@ export default {
     display: flex;
     width: 80%;
     height: 100%;
-    color: #fafafa;
+    color: var(--text-primary-color);
     align-items: center;
     justify-content: center;
 }
@@ -199,14 +199,15 @@ export default {
     align-items: center;
     height: 12%;
     width: 100%;
-    border-bottom: 2px solid #fafafa;
+    border-bottom: 2px solid var(--text-primary-color);
 }
 
 .card1, .card2, .card3 {
-    border: 2px solid #fafafa;
+    border: 2px solid var(--text-primary-color);
     width: 30em;
     height: 20em;
     border-radius: 20px;
+    background: var(--background-color-cards);
 }
 
 .gitHubBtn {
@@ -229,12 +230,12 @@ export default {
     font-size: 1.2em;
     height: 45px;
     width: 150px;
-    color: #fafafa;
+    color: var(--text-primary-color);
     border-radius: 0px;
-    border: 2px solid #fafafa;
-    box-shadow: 5px 5px 0px 0px #fafafa;
+    border: 2px solid var(--text-primary-color);
+    box-shadow: 5px 5px 0px 0px var(--text-primary-color);
     transition: all 200ms ease-in-out;
-    background: #4c3a69;
+    background: var(--background-color-cards);
 }
 
 .gitHubBtn button:hover {

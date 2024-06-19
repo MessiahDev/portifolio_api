@@ -1,9 +1,9 @@
 {
     "navbar": {
-        "home": "Home",
-        "writing": "Writing",
-        "about": "About",
-        "contact": "Contact"
+        "home": "home",
+        "writing": "writing",
+        "about": "about",
+        "contact": "contact"
     },
     "home": {
         "greeting": "Hi, I'm Alex",
@@ -13,7 +13,7 @@
         "coffee": "coffee."
     },
     "writing": {
-        "title": "Writing",
+        "title": "Writing.",
         "btnGit": "visit my git..."
     },
     "about": {

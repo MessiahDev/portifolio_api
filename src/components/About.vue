@@ -56,8 +56,8 @@ export default {
 
 <style>
 .sectionAbout {
-    color: #f0f0f0;
-    background: #2C2A32;
+    color: var(--text-primary-color);
+    background: var(--background-color-tertiary);
     display: flex;
     justify-content: center;
     height: 230vh
@@ -100,8 +100,8 @@ export default {
 .introColums2 img {
     width: 300px;
     height: 300px;
-    border: 2px solid #fafafa;
-    box-shadow: 10px 10px 0px #fafafa;
+    border: 2px solid var(--text-primary-color);
+    box-shadow: 10px 10px 0px var(--text-primary-color);
 }
 
 .article {
@@ -124,7 +124,7 @@ export default {
     height: 2px;
     width: 50%;
     margin: 25px 20px;
-    background: #fafafa;
+    background: var(--text-primary-color);
     justify-self: flex-end;
 }
 

@@ -1,8 +1,27 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --background-color-primary: #774069;
+    --background-color-secondary: #4c3a69;
+    --background-color-tertiary: #2C2A32;
+    --background-color-auxiliary: hsl(257, 8%, 18%);
+    --background-color-cards: #4c3a69;
+    --color-logo: hsl(240, 33%, 77%);
+    --text-primary-color: #fafafa;
+}
+
+:root.dark-theme {
+    --background-color-primary: hsl(164, 61%, 65%);
+    --background-color-secondary: #AE8FDB;
+    --background-color-tertiary: #FEF8B4;
+    --background-color-auxiliary: hsl(300, 11%, 96%);
+    --background-color-cards: #F7F7F7;
+    --color-logo: hsl(164, 61%, 65%);
+    --text-primary-color: #404040;
 }
 
 @font-face {
@@ -88,6 +107,16 @@
 @font-face {
     font-family: 'Mosk Ultra Bold';
     src: url('@/assets/mosk/Mosk Ultra-Bold 900.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mosk Medium';
+    src: url('@/assets/mosk/Mosk Medium 500.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mosk Bold';
+    src: url('@/assets/mosk/Mosk Bold 700.ttf') format('truetype');
 }
 
 @font-face {
