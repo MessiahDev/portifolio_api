@@ -3,7 +3,7 @@
         <div class="cardsColums">
             <div class="container1">
                 <div class="coding">
-                    <h2>Writing.</h2>
+                    <h2>{{ $t('writing.title') }}</h2>
                 </div>
                 <div class="cardContainer1">
                     <div class="card1">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="gitHubBtn">
-                    <button>visite meu git...</button>
+                    <button>{{ $t('writing.btnGit') }}</button>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
 
 <script>
 export default {
-    name: 'Projetos',
+    name: 'Writing',
 
     data() {
         return {

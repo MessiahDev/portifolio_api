@@ -5,16 +5,19 @@
         <h1>Alex</h1>
       </div>
       <div class="div-select-lang">
-        <select class="select-lang">
-          <option selected value="br">BR</option>
-          <option value="us">US</option>
+        <select class="select-lang" v-model="currentLocale" @change="changeLanguage">
+          <option
+            v-for="optionLocale in supportLocales"
+            :key="`locale-${optionLocale}`"
+            :value="optionLocale">{{ optionLocale.toUpperCase() }}
+          </option>
         </select>
       </div>
     </div>
     <div class="menuList">
       <ul class="list" v-for="(item, index) in menuItems" :key="index">
         <li class="listItem">
-          <a class="links" href="#">{{ item }}</a>
+          <a class="links" href="#">{{ $t(item) }}</a>
         </li>
       </ul>
     </div>
@@ -22,38 +25,60 @@
 </template>
 
 <script>
+import { onMounted, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { SUPPORT_LOCALES, setI18nLanguage } from '../i18n';
+
 export default {
-    name: 'Navbar',
+  name: 'Navbar',
 
-    data() {
+  setup() {
+    const { locale } = useI18n({ useScope: 'global' });
+    const currentLocale = ref(locale.value);
+    const supportLocales = SUPPORT_LOCALES;
+
+    const logoObserver = ref(null);
+
+    function observeLogo() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          } else {
+            entry.target.classList.remove('show');
+          }
+        });
+      });
+
+      const cards = document.querySelectorAll('.logo');
+      cards.forEach(card => {
+        observer.observe(card);
+      });
+
+      logoObserver.value = observer;
+    }
+
+    onMounted(() => {
+      observeLogo();
+    });
+
+    function changeLanguage(event) {
+      currentLocale.value = event.target.value;
+    }
+
+    watch(currentLocale, (newLocale) => {
+      locale.value = newLocale;
+      setI18nLanguage(newLocale);
+    });
+
     return {
-      menuItems: ['Início', 'Writing', 'Trabalhos', 'Skills', 'Sobre']
+      currentLocale,
+      supportLocales,
+      changeLanguage,
+      menuItems: ref(['navbar.home', 'navbar.writing', 'navbar.about', 'navbar.contact'])
     };
-  },
-
-  mounted() {
-    this.observeLogo();
-  },
-
-  methods: {
-    observeLogo() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show');
-                }
-            });
-        });
-
-        const cards = document.querySelectorAll('.logo');
-        cards.forEach(card => {
-            observer.observe(card);
-        });
-    },
   }
-}
+};
 </script>
 <style>
 .navbar {
@@ -130,12 +155,11 @@ export default {
   text-align: end;
   cursor: pointer;
   transform: translateY(-100%);
-  transition: all 1s ease-in-out;
+  transition: all 800ms ease-in-out;
 }
 
 .logo.show {
   transform: translateY(0);
-  transition: all 1s ease-in-out;
 }
 
 .div-select-lang {
@@ -148,7 +172,7 @@ export default {
 }
 
 .select-lang {
-  font-family: 'Mosk Ultra Bold', sans-serif;
+  font-family: 'Ooen Sans Light', sans-serif;
   background-color: transparent;
   color: #fafafa;
   border: 0;

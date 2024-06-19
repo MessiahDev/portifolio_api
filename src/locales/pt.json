@@ -1,0 +1,57 @@
+{
+    "navbar": {
+        "home": "Início",
+        "writing": "Escrevendo",
+        "about": "Sobre",
+        "contact": "Contato"
+    },
+    "home": {
+        "greeting": "Olá, sou Alex",
+        "introduction1": "Sou um desenvolvedor ",
+        "fullstack": "fullstack",
+        "introduction2": " e amo o que faço, também sou viciado em ",
+        "coffee": "café."
+    },
+    "writing": {
+        "title": "Escrevendo.",
+        "btnGit": "visite meu git..."
+    },
+    "about": {
+        "title": "Um pouco sobre mim.",
+        "p1": "No início eu tinha muita vontade de trabalhar com desenvolvimento, mas tinha medo da complexidade dos códigos. Não desisti, e não tenho mais medo.",
+        "p2": "Então, naturalmente, levei muitas surras do código até saber o que sei hoje. Certamente ainda tenho muitas coisas para aprender e sigo no meu rítimo. Mas as vezes ainda assusta.",
+        "articles": {
+            "article1": {
+                "tecnology": "Back-end",
+                "header": "WEB API ASP NET Core",
+                "p1": "Onde crio meus serviços para fazer o controle e a relação entre a interface do usuário e a base de dados.",
+                "p2": "C# foi meu primeiro contato com desenvolvimento e já utilizei a linguagem profissionalmente como backend."
+            },
+            "article2": {
+                "tecnology": "Front-end",
+                "header": "JavaScript",
+                "p1": "Aprendi quando tive a necessidade de consumir minhas API's, junto com HTML e CSS.",
+                "p2": "Foi nesse momento que decidi ser fullstack. Me ajudou a ser um profissional mais versátil."
+            },
+            "article3": {
+                "tecnology": "Front-end",
+                "header": "TypeScript",
+                "p1": "Devido ao meu início com uma linguagem fortemente tipada, decidi me aprofundar na linguagem.",
+                "p2": "Junto ao C#, também utilizava o TypeScript no frontend em minha última experiência profissional."
+            },
+            "article4": {
+                "tecnology": "Framework",
+                "header": "Vue.js",
+                "p1": "Trabalhei com Vue também profissionalmente complementando o TypeScript.",
+                "p2": "Aliás, pessoalmente, é meu framework favorito para trabalhar com componentes e por ser mais flexível."
+            },
+            "article5": {
+                "tecnology": "Framework",
+                "header": "React",
+                "p1": "Estou começando a dar meus primeiros passos no React, mas não vejo muitas dificuldades pois é semelhante a componentização do Vue.",
+                "p2": "Pretendo me especializar, a maioria do mercado adota o framework em seus sistemas."
+            }
+                
+        }
+    }
+}

@@ -1,24 +1,24 @@
 <template>
   <Navbar />
   <Inicio />
-  <Projetos />
-  <Trabalhos />
+  <Writing />
+  <About />
 
 </template>
 
 <script>
 import Navbar from './Navbar.vue'
 import Inicio from './Inicio.vue'
-import Projetos from './Projetos.vue'
-import Trabalhos from './Trabalhos.vue'
+import About from './About.vue'
+import Writing from './Writing.vue'
 
 export default {
   name: 'LandingPage',
   components: {
     Navbar,
     Inicio,
-    Projetos,
-    Trabalhos,
+    Writing,
+    About,
   },
 }
 </script>

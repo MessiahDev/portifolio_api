@@ -1,51 +1,56 @@
 <template>
     <section class="sectionInicio">
-        <div class="logoInicio">
-            <img src="../assets/img/alex.png" alt="Alex" srcset="">
+      <div class="logoInicio">
+        <img src="../assets/img/alex.png" alt="Alex">
+      </div>
+      <div class="textRightContainer">
+        <div class="descricao">
+          <p class="title"><span class="hand">👋</span> {{ $t('home.greeting') }}</p>
+          <h2>
+            {{ $t('home.introduction1') }}
+            <span class="bordered-text">{{ $t('home.fullstack') }}</span>
+            {{ $t('home.introduction2') }}
+            <span class="bordered-text">{{ $t('home.coffee') }}</span>
+          </h2>
         </div>
-        <div class="textRightContainer">
-            <div class="descricao">
-                <p class="title"><span class="hand">👋</span> Olá, sou Alex</p>
-                <h1>Sou desenvolvedor <span class="bordered-text">fullstack</span> e amo o que faço, também sou viciado em <span class="bordered-text">café</span>.</h1>
-            </div>
-        </div>
+      </div>
     </section>
-</template>
-
-<script>
-export default {
+  </template>
+  
+  <script>
+  import { onMounted } from 'vue';
+  
+  export default {
     name: 'Inicio',
-
-    data() {
-        return {}
-    },
-
-    mounted() {
-        this.observeEvents();
-    },
-
-    methods: {
-        observeEvents() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                    } else {
-                        entry.target.classList.remove('show');
-                    }
-                });
-            });
-
-            const elements = document.querySelectorAll('.hand, .logoInicio img');
-            elements.forEach(element => {
-                observer.observe(element);
-            });
-        },
+  
+    setup() {
+      onMounted(() => {
+        observeEvents();
+      });
+  
+      function observeEvents() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+            } else {
+              entry.target.classList.remove('show');
+            }
+          });
+        });
+  
+        const elements = document.querySelectorAll('.hand, .logoInicio img');
+        elements.forEach(element => {
+          observer.observe(element);
+        });
+      }
+  
+      return {};
     }
-}
-</script>
-
-<style>
+  };
+  </script>
+  
+  <style>
 body {
     font-family: 'Montserrat Extra Light', sans-serif;
 }
@@ -59,7 +64,7 @@ body {
     height: 100vh;
     padding: 0 15em;
     background: #669bbc;
-    background: linear-gradient(to left, #774069 65%, #29272a 35%);
+    background: linear-gradient(to left, #774069 70%, #29272a 30%);
     grid-template-areas:
         'logoInicio' 'textRightContainer';
     justify-content: center;
@@ -92,6 +97,7 @@ body {
     grid-column: 2;
     height: 70vh;
     padding: 30px 0px;
+    margin-top: 8em;
 }
 
 .descricao {
@@ -113,7 +119,6 @@ body {
     font-family: 'Hello Valentica', sans-serif;
     margin-left: -4px;
     transform: rotate(354deg);
-    transition: all 0.6s ease-in-out;
 }
 
 .hand {
