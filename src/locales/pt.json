@@ -46,12 +46,17 @@
                 "p2": "Aliás, pessoalmente, é meu framework favorito para trabalhar com componentes e por ser mais flexível."
             },
             "article5": {
-                "tecnology": "Framework",
+                "tecnology": "Biblioteca",
                 "header": "React",
                 "p1": "Estou começando a dar meus primeiros passos no React, mas não vejo muitas dificuldades pois é semelhante a componentização do Vue.",
-                "p2": "Pretendo me especializar, a maioria do mercado adota o framework em seus sistemas."
+                "p2": "Pretendo me especializar, a maioria do mercado adota a biblioteca em seus sistemas."
             }
                 
         }
+    },
+    "footer": {
+        "title": "Estou sempre pronto para bater um papo.",
+        "content": "Envie-me um e-mail para alex.alle192@gmail.com ou ligue para mim nas redes sociais.",
+        "heyThere": "Ei!"
     }
 }

@@ -1,5 +1,5 @@
 <template>
-    <section class="backgroundWriting">
+    <section id="1" class="backgroundWriting">
         <div class="cardsColums">
             <div class="container1">
                 <div class="coding">
@@ -14,7 +14,7 @@
                                 <div class="dot"></div>
                             </article>
                             <article class="textHeader1">
-                                <p>Card 1</p>
+                                <p>Coming soon</p>
                             </article>
                         </div>
                         <div class="cardContent1"></div>
@@ -35,7 +35,7 @@
                                 <div class="dot"></div>
                             </article>
                             <article class="textHeader1">
-                                <p>Card 2</p>
+                                <p>Coming soon</p>
                             </article>
                         </div>
                         <div class="cardContent2"></div>
@@ -52,7 +52,7 @@
                                 <div class="dot"></div>
                             </article>
                             <article class="textHeader1">
-                                <p>Card 3</p>
+                                <p>Coming soon</p>
                             </article>
                         </div>
                         <div class="cardContent3"></div>

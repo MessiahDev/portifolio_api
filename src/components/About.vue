@@ -1,5 +1,5 @@
 <template>
-  <section class="sectionAbout">
+  <section id="2" class="sectionAbout">
     <div class="contentAbout">
       <div class="aboutIntro">
         <div class="introColums1">
@@ -8,19 +8,20 @@
           <p>{{ $t('about.p2') }}</p>
         </div>
         <div class="introColums2">
+          <div class="infoImage">Rio de Janeiro</div>
           <img src="../assets/img/alex2.png" alt="Alex">
         </div>
       </div>
       <div v-for="index in articlesCount" :key="index">
         <article class="article">
           <div class="topc">
-            <p>{{ $t(`about.articles.article${index}.tecnology`, '') }}</p>
+            <p>{{ $t(`about.articles.article${index}.tecnology`) }}</p>
           </div>
           <div class="lineTopc"></div>
           <div class="topcContent">
-            <p>{{ $t(`about.articles.article${index}.header`, '') }}</p>
-            <p>{{ $t(`about.articles.article${index}.p1`, '') }}</p>
-            <p>{{ $t(`about.articles.article${index}.p2`, '') }}</p>
+            <p>{{ $t(`about.articles.article${index}.header`) }}</p>
+            <p>{{ $t(`about.articles.article${index}.p1`) }}</p>
+            <p>{{ $t(`about.articles.article${index}.p2`) }}</p>
           </div>
         </article>
       </div>
@@ -60,7 +61,8 @@ export default {
     background: var(--background-color-tertiary);
     display: flex;
     justify-content: center;
-    height: 230vh
+    height: 230vh;
+    width: 100vw;
 }
 
 .contentAbout {
@@ -92,16 +94,32 @@ export default {
 }
 
 .introColums2 {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.infoImage {
+  position: absolute;
+  width: 150px;
+  height: 35px;
+  background: var(--accent-color);
+  font-family: 'Mosk Bold', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 2em;
+  left: 6em;
+  border: 2px solid var(--text-primary-color);
+  box-shadow: 5px 5px 0px var(--text-primary-color);
 }
 
 .introColums2 img {
     width: 300px;
     height: 300px;
     border: 2px solid var(--text-primary-color);
-    box-shadow: 10px 10px 0px var(--text-primary-color);
+    box-shadow: 5px 5px 0px var(--text-primary-color);
 }
 
 .article {

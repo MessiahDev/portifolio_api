@@ -4,14 +4,22 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 :root {
     --background-color-primary: #774069;
     --background-color-secondary: #4c3a69;
     --background-color-tertiary: #2C2A32;
-    --background-color-auxiliary: hsl(257, 8%, 18%);
+    --background-color-auxiliary: hsl(274, 4%, 15%);
     --background-color-cards: #4c3a69;
     --color-logo: hsl(240, 33%, 77%);
     --text-primary-color: #fafafa;
+    --accent-color: hsl(274, 4%, 15%); 
 }
 
 :root.dark-theme {
@@ -22,6 +30,24 @@
     --background-color-cards: #F7F7F7;
     --color-logo: hsl(164, 61%, 65%);
     --text-primary-color: #404040;
+    --accent-color: #fafafa;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color-auxiliary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-color-primary);
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #AE8FDB;
 }
 
 @font-face {
@@ -117,6 +143,11 @@
 @font-face {
     font-family: 'Mosk Bold';
     src: url('@/assets/mosk/Mosk Bold 700.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Mosk Light';
+    src: url('@/assets/mosk/Mosk Light 300.ttf') format('truetype');
 }
 
 @font-face {

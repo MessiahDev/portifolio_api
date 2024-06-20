@@ -21,7 +21,7 @@
   import { onMounted } from 'vue';
   
   export default {
-    name: 'Inicio',
+    name: 'Home',
   
     setup() {
       onMounted(() => {

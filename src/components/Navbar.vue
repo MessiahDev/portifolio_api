@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav id="0" class="navbar">
     <div class="logoContainer">
       <div class="logo">
         <h1>Alex</h1>
@@ -17,7 +17,7 @@
     <div class="menuList">
       <ul class="list" v-for="(item, index) in menuItems" :key="index">
         <li class="listItem">
-          <a class="links" href="#">{{ $t(item) }}</a>
+          <a class="links" :href="`#${index}`">{{ $t(item) }}</a>
         </li>
       </ul>
       <div class="btnSwitch">
@@ -206,7 +206,7 @@ export default {
 
 .btnSwitch {
   width: 30%;
-  margin: 0px 10px;
+  margin-left: 40px;
 }
 
 .switch {

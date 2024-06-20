@@ -1,42 +1,31 @@
 <template>
   <Navbar />
-  <Inicio />
+  <Home />
   <Writing />
   <About />
+  <FooterContact />
 
 </template>
 
 <script>
 import Navbar from './Navbar.vue'
-import Inicio from './Inicio.vue'
+import Home from './Home.vue'
 import About from './About.vue'
 import Writing from './Writing.vue'
+import FooterContact from './FooterContact.vue'
 
 export default {
   name: 'LandingPage',
   components: {
     Navbar,
-    Inicio,
+    Home,
     Writing,
     About,
+    FooterContact
   },
 }
 </script>
 
 <style>
-html,
-body {
-  width: 100vw;
-  overflow-x: hidden;
-}
 
-.parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #0d1b2a;
-    background-attachment: fixed;
-    height: 100vh;
-}
 </style>
