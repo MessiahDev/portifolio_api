@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="gitHubBtn">
-                    <button>{{ $t('writing.btnGit') }}</button>
+                    <button @click="goToGitHub()">{{ $t('writing.btnGit') }}</button>
                 </div>
             </div>
 
@@ -94,6 +94,11 @@ export default {
                 observer.observe(card);
             });
         },
+
+        goToGitHub() {
+            const url = 'https://github.com/MessiahDev'
+            window.location.href = url;
+        }
     }
 }
 </script>
@@ -236,6 +241,7 @@ export default {
     box-shadow: 5px 5px 0px 0px var(--text-primary-color);
     transition: all 200ms ease-in-out;
     background: var(--background-color-cards);
+    cursor: pointer;
 }
 
 .gitHubBtn button:hover {
