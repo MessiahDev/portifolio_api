@@ -4,6 +4,7 @@
   <Writing />
   <About />
   <FooterContact />
+  <SpeedInsights/>
   <div class="scrollTop" :class="{ show: showScrollTopButton }">
     <button class="btnScroll" @click="navigate()"><i class="mdi mdi-arrow-up"></i></button>
   </div>
@@ -15,6 +16,7 @@ import Home from './Home.vue'
 import About from './About.vue'
 import Writing from './Writing.vue'
 import FooterContact from './FooterContact.vue'
+import { SpeedInsights } from "@vercel/speed-insights/vue"
 
 export default {
   name: 'LandingPage',
@@ -23,7 +25,8 @@ export default {
     Home,
     Writing,
     About,
-    FooterContact
+    FooterContact,
+    SpeedInsights
   },
   data() {
     return {
