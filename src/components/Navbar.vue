@@ -117,6 +117,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 7em;
   cursor: pointer;
 }
 

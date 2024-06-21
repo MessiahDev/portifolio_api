@@ -55,7 +55,8 @@
     },
     "footer": {
         "title": "Siempre estoy listo para charlar contigo.",
-        "content": "Envíame un correo electrónico a alex.alle192@gmail.com o contáctame a través de las redes sociales.",
+        "content1": "Envíame un correo electrónico a ",
+        "content2": " o contáctame a través de las redes sociales.",
         "heyThere": "¡Hola!"
     }
 }
