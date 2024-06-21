@@ -97,7 +97,7 @@ export default {
 
         goToGitHub() {
             const url = 'https://github.com/MessiahDev'
-            window.location.href = url;
+            window.open(url, '_blank');
         }
     }
 }
