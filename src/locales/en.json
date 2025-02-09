@@ -14,7 +14,10 @@
     },
     "writing": {
         "title": "Writing.",
-        "btnGit": "visit my git..."
+        "btnGit": "visit my git...",
+        "cardName": "Car rental",
+        "goToGitHub": "GitHub",
+        "goToSite": "Go to site"
     },
     "about": {
         "title": "A bit about me.",

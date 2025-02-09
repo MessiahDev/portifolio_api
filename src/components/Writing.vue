@@ -14,10 +14,20 @@
                                 <div class="dot"></div>
                             </article>
                             <article class="textHeader1">
-                                <p>Coming soon</p>
+                                <p>{{ $t('writing.cardName') }}</p>
                             </article>
                         </div>
-                        <div class="cardContent1"></div>
+                        <div class="cardContent1">
+                            <img src="@/assets/Car_Rental_IMG.png" alt="Car Rental" class="car-rental-img" />
+                            <div class="icons-container">
+                                <a href="https://github.com/MessiahDev/Car-Rental-Frontend" target="_blank" class="icon-button">
+                                    <i class="mdi mdi-github" :title="$t('writing.goToGitHub')"></i>
+                                </a>
+                                <a href="https://carrental-demo.vercel.app/" target="_blank" class="icon-button">
+                                    <i class="mdi mdi-web" :title="$t('writing.goToSite')"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="gitHubBtn">
@@ -156,6 +166,10 @@ export default {
 }
 
 .textHeader1 {
+    font-family: 'Mosk Ultra Bold', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
     display: flex;
     width: 80%;
     height: 100%;
@@ -213,6 +227,31 @@ export default {
     height: 20em;
     border-radius: 20px;
     background: var(--background-color-cards);
+}
+
+.car-rental-img {
+    width: 100%;
+    height: auto;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 4px;
+  font-size: 30px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-primary-color);
+}
+
+.icon-button:hover {
+    color: var(--background-color-primary);
 }
 
 .gitHubBtn {
