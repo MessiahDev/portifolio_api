@@ -164,4 +164,120 @@ export default {
     font-size: 1.2em;
 }
 
+@media (max-width: 1200px) {
+  .contentAbout {
+    width: 80vw;
+  }
+
+  .introColums1 {
+    height: auto;
+  }
+
+  .aboutMe {
+    font-size: 40px;
+  }
+
+  .introColums2 img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .infoImage {
+    left: 3em;
+    top: 1em;
+    width: 130px;
+    height: 30px;
+  }
+
+  .topcContent p:first-child {
+    font-size: 2em;
+  }
+
+  .topcContent p:nth-child(2), .topcContent p:nth-child(3) {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionAbout {
+    height: auto;
+    padding: 2em 0;
+  }
+
+  .aboutIntro {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  .infoImage {
+    position: static;
+    margin-bottom: 1em;
+  }
+
+  .introColums2 {
+    flex-direction: column;
+  }
+
+  .introColums2 img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .article {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .topc {
+    transform: none;
+    font-size: 1.4em;
+    height: auto;
+    text-align: center;
+  }
+
+  .lineTopc {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .topcContent {
+    height: auto;
+  }
+
+  .topcContent p:first-child {
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .topcContent p:nth-child(2), .topcContent p:nth-child(3) {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 500px) {
+  .aboutMe {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .introColums1 p {
+    font-size: 1em;
+  }
+
+  .topcContent p:first-child {
+    font-size: 1.4em;
+  }
+
+  .introColums2 img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .infoImage {
+    font-size: 0.9em;
+    width: auto;
+    padding: 0 1em;
+  }
+}
 </style>

@@ -17,7 +17,8 @@
         "btnGit": "visite meu git...",
         "cardName": "Locadora de veículos",
         "goToGitHub": "GitHub",
-        "goToSite": "Ir para o site"
+        "goToSite": "Ir para o site",
+        "financial": "Gerenciador Financeiro"
     },
     "about": {
         "title": "Um pouco sobre mim.",

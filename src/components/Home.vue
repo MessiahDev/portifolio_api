@@ -159,4 +159,82 @@ body {
     80% { transform: rotate(30deg); }
     100% { transform: rotate(0deg); }
 }
+
+@media (max-width: 1400px) {
+  .sectionInicio {
+    padding: 0 5em;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+  }
+
+  .textRightContainer {
+    margin-top: 4em;
+    height: auto;
+  }
+
+  .descricao {
+    font-size: 30px;
+    line-height: 60px;
+  }
+
+  .logoInicio img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionInicio {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'logoInicio'
+      'textRightContainer';
+    padding: 2em 1em;
+    height: auto;
+  }
+
+  .logoInicio {
+    margin-bottom: 2em;
+  }
+
+  .logoInicio img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .descricao {
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 1.5rem;
+    transform: none;
+  }
+
+  .textRightContainer {
+    margin-top: 0;
+    padding: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .descricao {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .logoInicio img {
+    width: 150px;
+    height: 150px;
+    border: 10px solid var(--text-primary-color);
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}
 </style>

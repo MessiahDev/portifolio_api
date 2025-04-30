@@ -17,7 +17,8 @@
         "btnGit": "visit my git...",
         "cardName": "Car rental",
         "goToGitHub": "GitHub",
-        "goToSite": "Go to site"
+        "goToSite": "Go to site",
+        "financial": "Financial Manager"
     },
     "about": {
         "title": "A bit about me.",

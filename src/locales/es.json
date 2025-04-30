@@ -17,7 +17,8 @@
         "btnGit": "visita mi git...",
         "cardName": "Alquiler de autos",
         "goToGitHub": "GitHub",
-        "goToSite": "Ir al sitio web"
+        "goToSite": "Ir al sitio web",
+        "financial": "Gestor Financiero"
     },
     "about": {
         "title": "Un poco sobre mí.",

@@ -45,10 +45,20 @@
                                 <div class="dot"></div>
                             </article>
                             <article class="textHeader1">
-                                <p>Coming soon</p>
+                                <p>{{ $t('writing.financial') }}</p>
                             </article>
                         </div>
-                        <div class="cardContent2"></div>
+                        <div class="cardContent2">
+                            <img src="@/assets/Financial_IMG.png" alt="Financial Manager" class="car-rental-img" />
+                            <div class="icons-container">
+                                <a href="https://github.com/MessiahDev/FinancialManagerAPI" target="_blank" class="icon-button">
+                                    <i class="mdi mdi-github" :title="$t('writing.goToGitHub')"></i>
+                                </a>
+                                <a href="https://financial-manager-psi.vercel.app/" target="_blank" class="icon-button">
+                                    <i class="mdi mdi-web" :title="$t('writing.goToSite')"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,5 +297,73 @@ export default {
     margin-top: 10px;
     margin-left: 10px;
     box-shadow: none;
+}
+
+@media (max-width: 1200px) {
+    .cardsColums {
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'container1'
+            'container2'
+            'container3';
+        grid-template-rows: auto;
+        row-gap: 2em;
+        height: auto;
+    }
+
+    .container1,
+    .container2,
+    .container3 {
+        grid-area: auto;
+    }
+
+    .card1, .card2, .card3 {
+        width: 100%;
+        height: auto;
+    }
+
+    .cardContainer1,
+    .cardContainer2,
+    .cardContainer3 {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .coding {
+        font-size: 2em;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .gitHubBtn {
+        height: auto;
+        margin-top: 1em;
+    }
+
+    .gitHubBtn button {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .coding {
+        font-size: 1.5em;
+    }
+
+    .textHeader1 {
+        font-size: 1em;
+    }
+
+    .icons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 </style>

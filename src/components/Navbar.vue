@@ -14,15 +14,20 @@
         </select>
       </div>
     </div>
-    <div class="menuList">
+
+    <button class="hamburger" @click="toggleMenu">
+      ☰
+    </button>
+
+    <div class="menuList" :class="{ open: isMenuOpen }">
       <ul class="list" v-for="(item, index) in menuItems" :key="index">
         <li class="listItem">
-          <a class="links" :href="`#${index}`">{{ $t(item) }}</a>
+          <a class="links" :href="`#${index}`" @click="closeMenu">{{ $t(item) }}</a>
         </li>
       </ul>
       <div class="btnSwitch">
         <label class="switch">
-          <input checked="" @click="toggleTheme()" type="checkbox" class="toggle">
+          <input checked="" @click="toggleTheme()" type="checkbox" class="toggle" />
           <span class="slider"></span>
           <span class="card-side"></span>
         </label>
@@ -43,6 +48,7 @@ export default {
     const { locale } = useI18n({ useScope: 'global' });
     const currentLocale = ref(locale.value);
     const supportLocales = SUPPORT_LOCALES;
+    const isMenuOpen = ref(false);
 
     const logoObserver = ref(null);
 
@@ -78,12 +84,22 @@ export default {
       setI18nLanguage(newLocale);
     });
 
+    function toggleMenu() {
+      isMenuOpen.value = !isMenuOpen.value;
+    }
+
+    function closeMenu() {
+      isMenuOpen.value = false;
+    }
+
     return {
-      isDarkTheme: false,
       currentLocale,
       supportLocales,
       changeLanguage,
-      menuItems: ref(['navbar.home', 'navbar.writing', 'navbar.about', 'navbar.contact'])
+      menuItems: ref(['navbar.home', 'navbar.writing', 'navbar.about', 'navbar.contact']),
+      isMenuOpen,
+      toggleMenu,
+      closeMenu
     };
   },
 
@@ -95,6 +111,7 @@ export default {
   }
 };
 </script>
+
 <style>
 .navbar {
   display: flex;
@@ -189,7 +206,7 @@ export default {
 }
 
 .select-lang {
-  font-family: 'Ooen Sans Light', sans-serif;
+  font-family: 'Open Sans Light', sans-serif;
   background-color: transparent;
   color: var(--text-primary-color);
   border: 0;
@@ -273,5 +290,62 @@ export default {
 .toggle:checked + .slider:before {
   content: "on";
   transform: translateX(32px);
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-primary-color);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 101;
+  }
+
+  .menuList {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--background-color-tertiary);
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menuList.open {
+    display: flex;
+  }
+
+  .listItem {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .btnSwitch {
+    margin-left: 0;
+    margin-top: 1rem;
+    width: auto;
+  }
+
+  .menuList ul {
+    width: 100%;
+  }
+
+  .list {
+    width: 100%;
+  }
 }
 </style>
