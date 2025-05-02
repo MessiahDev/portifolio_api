@@ -51,7 +51,7 @@
                         <div class="cardContent2">
                             <img src="@/assets/Financial_IMG.png" alt="Financial Manager" class="car-rental-img" />
                             <div class="icons-container">
-                                <a href="https://github.com/MessiahDev/FinancialManagerAPI" target="_blank" class="icon-button">
+                                <a href="https://github.com/MessiahDev/financial-manager.git" target="_blank" class="icon-button">
                                     <i class="mdi mdi-github" :title="$t('writing.goToGitHub')"></i>
                                 </a>
                                 <a href="https://financial-manager-psi.vercel.app/" target="_blank" class="icon-button">
