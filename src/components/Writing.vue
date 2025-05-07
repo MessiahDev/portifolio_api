@@ -52,7 +52,10 @@
                             <img src="@/assets/Financial_IMG.png" alt="Financial Manager" class="car-rental-img" />
                             <div class="icons-container">
                                 <a href="https://github.com/MessiahDev/financial-manager.git" target="_blank" class="icon-button">
-                                    <i class="mdi mdi-github" :title="$t('writing.goToGitHub')"></i>
+                                    <i class="mdi mdi-github" :title="$t('writing.goToGitHubFront')"></i>
+                                </a>
+                                <a href="https://github.com/MessiahDev/FinancialManagerAPI.git" target="_blank" class="icon-button">
+                                    <i class="mdi mdi-github" :title="$t('writing.goToGitHubBack')"></i>
                                 </a>
                                 <a href="https://financial-manager-psi.vercel.app/" target="_blank" class="icon-button">
                                     <i class="mdi mdi-web" :title="$t('writing.goToSite')"></i>

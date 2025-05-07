@@ -17,6 +17,8 @@
         "btnGit": "visit my git...",
         "cardName": "Car rental",
         "goToGitHub": "GitHub",
+        "goToGitHubFront": "Front-end GitHub",
+        "goToGitHubBack": "Back-end GitHub",
         "goToSite": "Go to site",
         "financial": "Financial Manager"
     },
